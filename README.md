@@ -28,12 +28,12 @@ conda config --set auto_activate_base false
 ## Step 3: Create conda environment
 Prepare the following environment.yml file:
 
-'name: qe'
-'channels:'
-  '- conda-forge'
-  '- defaults'
-'dependencies:'
-  '- qe'
+`name: qe
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - qe`
 
 
 
