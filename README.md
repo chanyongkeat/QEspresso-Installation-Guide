@@ -44,10 +44,13 @@ Note that you can deactivate the conda environment for QE as follows:
 conda deactivate
 ```
 
-## Test Run
+## Run QE !
 Hooray! You have install QE! Now do some test runs.
+
 As of 1/9/2024, the QE on conda-forge is version 7.2. It has built-in MPI and OpenMP support. 
+
 For a computer machine with 8 cores and each core with 2 threads, we can use following command to fully utilize the computer resources to run simulation on QE.
+
 ```shell
 export OMP_NUM_THREADS=2
 ```
