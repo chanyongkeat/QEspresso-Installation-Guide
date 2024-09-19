@@ -26,14 +26,34 @@ conda config --set auto_activate_base false
 ```
 
 ## Step 3: Create conda environment
-Prepare the following environment.yml file:
+Prepare the following [environment.yml](./environment.yml) file in whatever directory you like.
+```shell
+wget https://raw.githubusercontent.com/chanyongkeat/QEspresso-Installation-Guide/refs/heads/main/environment.yml
+```
+Construct the conda environment based on the environment.yml file to the `./env` subdirectory by
+```shell
+conda env create -f environment.yml -p $(pwd)/env   
+```
+You can activate the conda environment for QE by
+```shell
+conda activate $(pwd)/env
+```
 
-`name: qe`
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - qe`
+Note that you can deactivate the conda environment for QE as follows:
+```shell
+conda deactivate
+```
+
+## Test Run
+Hooray! You have install QE! Now do some test runs.
+As of 1/9/2024, the QE on conda-forge is version 7.2. It has built-in MPI and OpenMP support. 
+For a computer machine with 8 cores and each core with 2 threads, we can use following command to fully utilize the computer resources to run simulation on QE.
+```shell
+export OMP_NUM_THREADS=2
+```
+```shell
+mpirun -np 8 pw.x -input $INPUT > $OUTPUT
+```
 
 
 
